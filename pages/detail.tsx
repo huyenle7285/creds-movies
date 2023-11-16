@@ -25,7 +25,7 @@ const PageItem = () => {
       <div className="flex flex-col justify-center items-center text-white">
         <Image
           src={imageURL}
-          alt={state?.currentMovie?.title}
+          alt={state?.currentMovie?.title || ''}
           width={200}
           height={IMAGE_HEIGHT}
         ></Image>

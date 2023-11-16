@@ -19,7 +19,6 @@ const createAppAsyncThunk = createAsyncThunk.withTypes<{
   state: AppState;
   dispatch: AppDispatch;
   rejectValue: string;
-  extra: { s: string; n: number };
 }>();
 
 export const fetchMovies = createAppAsyncThunk(

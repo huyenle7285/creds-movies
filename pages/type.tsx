@@ -1,9 +1,10 @@
 import { useSearchParams } from 'next/navigation';
+import { ReactNode, useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import { Movie } from '@/types/movie';
 import { useDispatch } from '@/store';
 import { fetchMovies, movie } from '@/store/movie';
-import { useSelector } from 'react-redux';
-import { ReactNode, useEffect, useRef, useState } from 'react';
 import MovieItem from '@/components/Movie';
 import Layout from '@/components/Layout';
 import { getTypeLabel } from '@/utils/movies';
@@ -12,9 +13,9 @@ function Type() {
   const dispatch = useDispatch();
   const state = useSelector(movie);
   const [movies, setMovies] = useState<Movie[]>([]);
-  const listInnerRef = useRef();
+  const listInnerRef = useRef<HTMLDivElement>(null);
   const searchParams = useSearchParams();
-  const type = searchParams.get('type');
+  const type = searchParams.get('type') || '';
 
   const onScroll = () => {
     if (listInnerRef.current) {

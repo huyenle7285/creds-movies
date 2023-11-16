@@ -19,7 +19,7 @@ interface Props {
 function Home(props: Props) {
   const dispatch = useDispatch();
   const state = useSelector(movie);
-  const listInnerRef = useRef();
+  const listInnerRef = useRef<HTMLDivElement>(null);
 
   const [searchMovies, setSearchMovies] = useState<Movie[]>([]);
   const [search, setSearch] = useState<string>('');
