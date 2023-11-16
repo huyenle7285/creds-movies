@@ -1,6 +1,17 @@
+## System requirements
+
+Node version >= 19.8.1
+
 ## Getting Started
 
 Run project local:
+Install dependencies:
+
+```bash
+yarn
+```
+
+Start application:
 
 ```bash
 yarn dev
@@ -45,9 +56,9 @@ utils: utility functions and constants
 ```
 
 ```bash
-/detail: movie detail page
+/detail?id={movie_id}: movie detail page
 ```
 
 ```bash
-/type?type={type}: list of movies by type
+/type?type={movie_type}: list of movies by type
 ```
